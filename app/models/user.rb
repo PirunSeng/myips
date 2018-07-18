@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :internet_protocols, dependent: :restrict_with_error
+  validates :name, presence: true
 end

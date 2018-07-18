@@ -1,0 +1,12 @@
+.row
+  .col-xs-12.col-sm-6.col-sm-offset-3.form
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      .ibox.normal-space
+        .ibox-title
+          %h5 Forgot Password
+        .ibox-content
+          .form-inputs
+            = f.error_notification
+            = f.input :email, required: true, autofocus: true
+        .ibox-footer
+          = f.submit 'Send reset password', class: 'btn btn-outline btn-primary'
