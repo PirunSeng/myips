@@ -1,0 +1,2 @@
+module InternetProtocolsHelper
+end

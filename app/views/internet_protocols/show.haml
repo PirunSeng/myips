@@ -1,0 +1,9 @@
+%h3= 'Address'
+%p= @internet_protocol.address
+%h4= 'Owner'
+%p= @internet_protocol.user.name
+%hr
+%p
+  = link_to 'Back to Home', root_path
+  |
+  = link_to 'Edit IP', edit_internet_protocol_path(@internet_protocol)

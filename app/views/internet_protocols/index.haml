@@ -1,0 +1,22 @@
+.row
+  .col-xs-12{ style: 'margin-top: 10px;' }
+    .row
+      .col-xs-6
+        %p= link_to 'Add New Address', new_internet_protocol_path, class: 'btn btn-sm btn-success'
+  %hr
+  .col-xs-12
+    %table.table.table-striped.table-hover.datatable
+      %thead
+        %tr
+          %th IP
+          %th Owner
+      %tbody
+        - @internet_protocols.each do |ip|
+          %tr
+            %td= link_to ip.address, internet_protocol_path(ip)
+            %td= ip.user.name
+
+.row
+  .col-xs-12
+    - if user_signed_in?
+      = link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-flat btn-danger'
