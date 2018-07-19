@@ -1,4 +1,5 @@
 class InternetProtocolsController < ApplicationController
+  before_action :authenticate_user!, except: :index
   before_action :find_internet_protocol, only: [:show, :edit, :update, :destroy]
 
   def index
